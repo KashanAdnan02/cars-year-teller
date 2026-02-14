@@ -1,13 +1,18 @@
 COLUMNS:
-  gender: object
-  age: float64
-  hypertension: int64
-  heart_disease: int64
-  smoking_history: object
-  bmi: float64
-  HbA1c_level: float64
-  blood_glucose_level: float64
-  diabetes: int64
+  nam: string
+  Price: string
+  Year: int64
+  Millage: string
+  Fuel: string
+  Transmission: string
+  Province: string
+  Color: string
+  Engine Capacity: string
+  Body Type: string
+  Ad Reference: string
+  Features: string
+  Owner nam: string
+  url: string
 
 TARGET_COLUMN:
-  name: diabetes
+  name: Year
