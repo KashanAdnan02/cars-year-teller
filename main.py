@@ -19,12 +19,12 @@ from src.cars.pipeline.model_evaluation_pipeline import ModelEvaluationTrainingP
 #         logger.exception(e)
 #         raise e
 
-try:
-   data_ingestion = DataTransformationTrainingPipeline()
-   data_ingestion.initiate_data_transformation()
-except Exception as e:
-        logger.exception(e)
-        raise e
+# try:
+#    data_ingestion = DataTransformationTrainingPipeline()
+#    data_ingestion.initiate_data_transformation()
+# except Exception as e:
+#         logger.exception(e)
+#         raise e
 # try:
 #    model_trainer = ModelTrainerTrainingPipeline()
 #    model_trainer.initiate_model_training()
@@ -32,9 +32,9 @@ except Exception as e:
 #         logger.exception(e)
 #         raise e
 
-# try:
-#    model_evaluation = ModelEvaluationTrainingPipeline()
-#    model_evaluation.initiate_model_evaluation()
-# except Exception as e:
-#         logger.exception(e)
-#         raise e
+try:
+   model_evaluation = ModelEvaluationTrainingPipeline()
+   model_evaluation.initiate_model_evaluation()
+except Exception as e:
+        logger.exception(e)
+        raise e

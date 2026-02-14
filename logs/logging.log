@@ -47,3 +47,42 @@
 [2026-02-14 19:16:38,501: WARNING: data_transformation: Column 'gender' not found in dataset]
 [2026-02-14 19:16:39,024: INFO: data_transformation: Data transformation completed successfully]
 [2026-02-14 19:18:33,734: INFO: data_transformation: Car data transformation completed successfully]
+[2026-02-14 19:19:49,050: ERROR: main: could not convert string to float: '1500 cc']
+Traceback (most recent call last):
+  File "/home/kashanadnan/Code/cars year teller/main.py", line 30, in <module>
+    model_trainer.initiate_model_training()
+  File "/home/kashanadnan/Code/cars year teller/src/cars/pipeline/model_trainer_pipeline.py", line 12, in initiate_model_training
+    model_trainer_config.train()
+  File "/home/kashanadnan/Code/cars year teller/src/cars/components/model_trainer.py", line 24, in train
+    lr.fit(train_x, train_y)
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/sklearn/linear_model/_coordinate_descent.py", line 1025, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 2919, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1314, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1022, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 878, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/cars year teller/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 2171, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '1500 cc'
+[2026-02-14 19:20:38,650: INFO: model_trainer: Model trained and saved at: artifacts/model_trainer/model.joblib]
+[2026-02-14 19:20:55,800: INFO: model_evaluation: Loading test data from: artifacts/data_transformation/test.csv]
+[2026-02-14 19:20:55,824: INFO: model_evaluation: Test data shape: (12384, 15)]
+[2026-02-14 19:20:55,825: INFO: model_evaluation: Loading model from: artifacts/model_trainer/model.joblib]
+[2026-02-14 19:20:55,837: INFO: model_evaluation: Predicting on 12384 test samples]
+[2026-02-14 19:20:55,837: INFO: model_evaluation: Feature columns: ['nam', 'Price', 'Millage', 'Fuel', 'Transmission', 'Province', 'Color', 'Assembly', 'Engine Capacity', 'Body Type', 'Ad Reference', 'Features', 'Owner nam', 'url']]
+[2026-02-14 19:20:55,970: INFO: model_evaluation: Evaluation metrics - RMSE: 7.3460, MAE: 5.5130, R²: 0.3230]
+[2026-02-14 19:20:55,970: INFO: model_evaluation: Metrics saved to: artifacts/model_evaluation/metrics.json]
+[2026-02-14 19:21:21,027: INFO: model_evaluation: Model and metrics successfully logged to MLflow]
