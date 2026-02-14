@@ -1,5 +1,5 @@
-from src.diabeties.config.configuration import ConfigurationManager
-from src.diabeties.components.data_transformation import DataTransformation
+from src.cars.config.configuration import ConfigurationManager
+from src.cars.components.data_transformation import DataTransformation
 
 from pathlib import Path
 

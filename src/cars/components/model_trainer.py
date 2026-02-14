@@ -1,9 +1,9 @@
 import pandas as pd
 import os
-from src.diabeties import logger
+from src.cars import logger
 from sklearn.linear_model import ElasticNet
 import joblib
-from src.diabeties.entity.config_entity import (ModelTrainerConfig)
+from src.cars.entity.config_entity import (ModelTrainerConfig)
 
 class ModelTrainer:
     def __init__(self, config: ModelTrainerConfig):

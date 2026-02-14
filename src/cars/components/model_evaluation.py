@@ -8,9 +8,9 @@ import mlflow
 import mlflow.sklearn
 from pathlib import Path
 
-from src.diabeties import logger
-from src.diabeties.entity.config_entity import ModelEvaluationConfig
-from src.diabeties.utils.common import save_json
+from src.cars import logger
+from src.cars.entity.config_entity import ModelEvaluationConfig
+from src.cars.utils.common import save_json
 
 
 class ModelEvaluation:

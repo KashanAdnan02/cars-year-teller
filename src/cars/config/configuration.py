@@ -1,6 +1,6 @@
-from src.diabeties.constants import *
-from src.diabeties.utils.common import read_yaml, create_directories
-from src.diabeties.entity.config_entity import DataIngestionConfig,DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
+from src.cars.constants import *
+from src.cars.utils.common import read_yaml, create_directories
+from src.cars.entity.config_entity import DataIngestionConfig,DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
 
 class ConfigurationManager:
     def __init__(self,

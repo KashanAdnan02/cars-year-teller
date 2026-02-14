@@ -2,9 +2,9 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from src.diabeties import logger
-from src.diabeties.entity.config_entity import DataTransformationConfig
-from src.diabeties.config.configuration import ConfigurationManager
+from src.cars import logger
+from src.cars.entity.config_entity import DataTransformationConfig
+from src.cars.config.configuration import ConfigurationManager
 
 
 class DataTransformation:

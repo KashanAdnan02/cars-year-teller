@@ -1,9 +1,9 @@
-from src.diabeties import logger
-from src.diabeties.pipeline.data_ingestion_pipeline import DataIngestionTrainingPipeline
-from src.diabeties.pipeline.data_validation_pipeline import DataValidationTrainingPipeline
-from src.diabeties.pipeline.data_transformation_pipeline import DataTransformationTrainingPipeline
-from src.diabeties.pipeline.model_trainer_pipeline import ModelTrainerTrainingPipeline
-from src.diabeties.pipeline.model_evaluation_pipeline import ModelEvaluationTrainingPipeline
+from src.cars import logger
+from src.cars.pipeline.data_ingestion_pipeline import DataIngestionTrainingPipeline
+from src.cars.pipeline.data_validation_pipeline import DataValidationTrainingPipeline
+from src.cars.pipeline.data_transformation_pipeline import DataTransformationTrainingPipeline
+from src.cars.pipeline.model_trainer_pipeline import ModelTrainerTrainingPipeline
+from src.cars.pipeline.model_evaluation_pipeline import ModelEvaluationTrainingPipeline
 
 try:
    data_ingestion = DataIngestionTrainingPipeline()

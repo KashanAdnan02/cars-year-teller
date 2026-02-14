@@ -1,9 +1,9 @@
 import os
 import urllib.request as request
-from src.diabeties import logger
+from src.cars import logger
 import zipfile
 import pandas as pd
-from src.diabeties.entity.config_entity import (DataValidationConfig)
+from src.cars.entity.config_entity import (DataValidationConfig)
 
 class DataValiadtion:
     def __init__(self, config: DataValidationConfig):

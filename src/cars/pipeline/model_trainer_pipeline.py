@@ -1,5 +1,5 @@
-from src.diabeties.config.configuration import ConfigurationManager
-from src.diabeties.components.model_trainer import ModelTrainer
+from src.cars.config.configuration import ConfigurationManager
+from src.cars.components.model_trainer import ModelTrainer
 
 class ModelTrainerTrainingPipeline:
     def __init__(self):

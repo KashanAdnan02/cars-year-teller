@@ -1,9 +1,9 @@
 # first component to get the download data and unzip
 import os
 import urllib.request as request
-from src.diabeties import logger
+from src.cars import logger
 import zipfile
-from src.diabeties.entity.config_entity import (DataIngestionConfig)
+from src.cars.entity.config_entity import (DataIngestionConfig)
 
 class DataIngestion:
     def __init__(self,config:DataIngestionConfig):

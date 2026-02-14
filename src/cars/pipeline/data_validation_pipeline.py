@@ -1,6 +1,6 @@
-from src.diabeties.config.configuration import ConfigurationManager
-from src.diabeties.components.data_validation import DataValiadtion
-from src.diabeties import logger
+from src.cars.config.configuration import ConfigurationManager
+from src.cars.components.data_validation import DataValiadtion
+from src.cars import logger
 
 class DataValidationTrainingPipeline:
     def __init__(self):
