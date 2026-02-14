@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diabetes Risk Assessment</title>
+    <title>Car Listing Submission</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -51,7 +51,7 @@
             backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 40px;
-            max-width: 500px;
+            max-width: 900px;
             width: 100%;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: slideIn 0.6s ease-out;
@@ -76,7 +76,7 @@
         }
 
         .header h1 {
-            color: #667eea;
+            color: #FF6B6B;
             font-size: 28px;
             margin-bottom: 8px;
             font-weight: 700;
@@ -101,7 +101,7 @@
         .icon-header {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
@@ -114,23 +114,106 @@
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
             }
             50% {
                 transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(102, 126, 234, 0);
+                box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
             }
         }
 
-        form {
+        .ai-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            color: white;
+            animation: slideInLeft 0.5s ease-out both;
+        }
+
+        .ai-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ai-icon {
+            font-size: 24px;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .car-image-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .car-image-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .car-image-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .year-prediction {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .year-prediction h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .predicted-year {
+            font-size: 36px;
+            font-weight: bold;
+            color: #FFE66D;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .confidence {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
         .input-group {
             position: relative;
             animation: slideInLeft 0.5s ease-out both;
+        }
+
+        .input-group.full-width {
+            grid-column: 1 / -1;
         }
 
         .input-group:nth-child(1) { animation-delay: 0.1s; }
@@ -162,7 +245,7 @@
             transition: color 0.3s ease;
         }
 
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 14px 16px;
             border: 2px solid #e0e0e0;
@@ -171,23 +254,29 @@
             transition: all 0.3s ease;
             background: white;
             color: #333;
+            font-family: inherit;
         }
 
-        input:focus, select:focus {
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            border-color: #FF6B6B;
+            box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1);
             transform: translateY(-2px);
         }
 
-        input::placeholder {
+        input::placeholder, textarea::placeholder {
             color: #aaa;
         }
 
         select {
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23667eea' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FF6B6B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 16px center;
             padding-right: 40px;
@@ -200,9 +289,10 @@
         }
 
         button {
+            grid-column: 1 / -1;
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
             color: white;
             border: none;
             border-radius: 12px;
@@ -210,13 +300,13 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
             animation: slideInLeft 0.5s ease-out 0.5s both;
         }
 
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
         }
 
         button:active {
@@ -224,49 +314,19 @@
         }
 
         .progress-bar {
+            grid-column: 1 / -1;
             height: 4px;
             background: #e0e0e0;
             border-radius: 2px;
-            margin-top: 30px;
+            margin-top: 10px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(90deg, #FF6B6B 0%, #4ECDC4 100%);
             width: 0%;
             transition: width 0.3s ease;
-        }
-
-        /* Tooltip styles */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            margin-left: 5px;
-            cursor: help;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 200px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 8px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -100px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 12px;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
         }
 
         @media (max-width: 600px) {
@@ -276,6 +336,10 @@
 
             .header h1 {
                 font-size: 24px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -289,74 +353,124 @@
 
     <div class="container">
         <div class="header">
-            <div class="icon-header">🏥</div>
-            <h1>Diabetes Risk Assessment</h1>
-            <p>Please fill in your health information below</p>
+            <div class="icon-header">🚗</div>
+            <h1>Car Listing Submission</h1>
+            <p>Submit your car details for listing</p>
         </div>
 
-        <form action="/predict" method="post" id="assessmentForm">
+        <!-- AI-Powered Section -->
+        <div class="ai-section" id="aiSection" style="display: none;">
+            <h2><span class="ai-icon">🤖</span> AI-Powered Analysis</h2>
+            
+            <div class="year-prediction" id="yearPrediction" style="display: none;">
+                <h3>Predicted Manufacturing Year</h3>
+                <div class="predicted-year" id="predictedYear">2018</div>
+                <div class="confidence">Confidence: <span id="confidence">95%</span></div>
+            </div>
+
+            <div class="car-image-preview" id="carImagePreview">
+                <!-- Car images will be loaded here -->
+            </div>
+        </div>
+
+        <form action="/submit" method="post" id="carForm">
             <div class="input-group">
-                <label for="gender">Gender</label>
-                <select name="gender" id="gender" required>
-                    <option value="">Select your gender</option>
-                    <option value="0">Male</option>
-                    <option value="1">Female</option>
+                <label for="name">Car Name / Model</label>
+                <input type="text" name="name" id="name" placeholder="e.g., Toyota Corolla" required>
+            </div>
+
+            <div class="input-group">
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price" placeholder="e.g., PKR 2,500,000" required>
+            </div>
+
+            <div class="input-group">
+                <label for="mileage">Mileage (km)</label>
+                <input type="text" name="mileage" id="mileage" placeholder="e.g., 45,000 km" required>
+            </div>
+
+            <div class="input-group">
+                <label for="fuel">Fuel Type</label>
+                <select name="fuel" id="fuel" required>
+                    <option value="">Select fuel type</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Electric">Electric</option>
+                    <option value="CNG">CNG</option>
                 </select>
             </div>
 
             <div class="input-group">
-                <label for="age">Age</label>
-                <input type="number" name="age" id="age" placeholder="Enter your age" min="1" max="120" required>
-            </div>
-
-            <div class="input-group">
-                <label for="hypertension">Hypertension</label>
-                <select name="hypertension" id="hypertension" required>
-                    <option value="">Do you have hypertension?</option>
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
+                <label for="transmission">Transmission</label>
+                <select name="transmission" id="transmission" required>
+                    <option value="">Select transmission</option>
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
                 </select>
             </div>
 
             <div class="input-group">
-                <label for="heart_disease">Heart Disease</label>
-                <select name="heart_disease" id="heart_disease" required>
-                    <option value="">Do you have heart disease?</option>
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
+                <label for="province">Province</label>
+                <select name="province" id="province" required>
+                    <option value="">Select province</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Sindh">Sindh</option>
+                    <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                    <option value="Balochistan">Balochistan</option>
+                    <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+                    <option value="Azad Kashmir">Azad Kashmir</option>
+                    <option value="Islamabad">Islamabad</option>
                 </select>
             </div>
 
             <div class="input-group">
-                <label for="smoking_history">Smoking History</label>
-                <select name="smoking_history" id="smoking_history" required>
-                    <option value="">Select your smoking history</option>
-                    <option value="0">Never</option>
-                    <option value="1">Current</option>
-                    <option value="1">Former</option>
-                    <option value="1">No Information</option>
+                <label for="color">Color</label>
+                <input type="text" name="color" id="color" placeholder="e.g., White, Black, Silver" required>
+            </div>
+
+            <div class="input-group">
+                <label for="engine_capacity">Engine Capacity</label>
+                <input type="text" name="engine_capacity" id="engine_capacity" placeholder="e.g., 1300cc, 1800cc" required>
+            </div>
+
+            <div class="input-group">
+                <label for="body_type">Body Type</label>
+                <select name="body_type" id="body_type" required>
+                    <option value="">Select body type</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Crossover">Crossover</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Van">Van</option>
+                    <option value="Pickup">Pickup</option>
+                    <option value="Convertible">Convertible</option>
                 </select>
             </div>
 
             <div class="input-group">
-                <label for="bmi">BMI (Body Mass Index)</label>
-                <input type="number" name="bmi" id="bmi" placeholder="Enter your BMI" step="0.1" min="10" max="60" required>
-                <div class="input-hint">Normal range: 18.5 - 24.9</div>
+                <label for="ad_reference">Ad Reference</label>
+                <input type="text" name="ad_reference" id="ad_reference" placeholder="e.g., REF-2024-001" required>
+            </div>
+
+            <div class="input-group full-width">
+                <label for="features">Features</label>
+                <textarea name="features" id="features" placeholder="List car features (e.g., ABS, Airbags, Sunroof, Navigation System, Parking Sensors)" required></textarea>
+                <div class="input-hint">Separate multiple features with commas</div>
             </div>
 
             <div class="input-group">
-                <label for="HbA1c_level">HbA1c Level (%)</label>
-                <input type="number" name="HbA1c_level" id="HbA1c_level" placeholder="Enter your HbA1c level" step="0.1" min="3" max="15" required>
-                <div class="input-hint">Normal range: 4.0 - 5.6%</div>
+                <label for="owner_name">Owner Name</label>
+                <input type="text" name="owner_name" id="owner_name" placeholder="Enter owner name" required>
             </div>
 
             <div class="input-group">
-                <label for="blood_glucose_level">Blood Glucose Level (mg/dL)</label>
-                <input type="number" name="blood_glucose_level" id="blood_glucose_level" placeholder="Enter your blood glucose level" min="50" max="400" required>
-                <div class="input-hint">Normal fasting: 70 - 100 mg/dL</div>
+                <label for="url">Listing URL</label>
+                <input type="url" name="url" id="url" placeholder="https://example.com/car-listing">
             </div>
 
-            <button type="submit">Assess Risk</button>
+            <button type="submit">Submit Listing</button>
 
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
@@ -365,10 +479,79 @@
     </div>
 
     <script>
-        // Progress bar animation based on form completion
-        const form = document.getElementById('assessmentForm');
-        const inputs = form.querySelectorAll('input, select');
+        // Sample car images database (would be populated by AI model)
+        const carImagesDatabase = {
+            'toyota corolla': [
+                'https://images.unsplash.com/photo-1623869675781-80aa31012a5a?w=400',
+                'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400'
+            ],
+            'honda civic': [
+                'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400',
+                'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=400'
+            ],
+            'suzuki alto': [
+                'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400'
+            ]
+        };
+
+        // AI Model Year Prediction (Mock function - would connect to actual AI model)
+        async function predictCarYear(carName, engineCapacity, features) {
+            // Simulate API call to AI model
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    // Mock prediction based on car name patterns
+                    const currentYear = new Date().getFullYear();
+                    const randomYear = currentYear - Math.floor(Math.random() * 10);
+                    const confidence = 85 + Math.floor(Math.random() * 15);
+                    
+                    resolve({
+                        year: randomYear,
+                        confidence: confidence
+                    });
+                }, 1000);
+            });
+        }
+
+        // Load car images based on car name
+        function loadCarImages(carName) {
+            const imagePreview = document.getElementById('carImagePreview');
+            const normalizedName = carName.toLowerCase();
+            
+            // Clear previous images
+            imagePreview.innerHTML = '';
+            
+            // Find matching images
+            let images = [];
+            for (const [key, value] of Object.entries(carImagesDatabase)) {
+                if (normalizedName.includes(key)) {
+                    images = value;
+                    break;
+                }
+            }
+            
+            // Default to generic car images if no match
+            if (images.length === 0) {
+                images = [
+                    'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400',
+                    'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400'
+                ];
+            }
+            
+            // Display images
+            images.forEach(imgUrl => {
+                const card = document.createElement('div');
+                card.className = 'car-image-card';
+                card.innerHTML = `<img src="${imgUrl}" alt="Car Image" onerror="this.src='https://via.placeholder.com/400x300?text=Car+Image'">`;
+                imagePreview.appendChild(card);
+            });
+        }
+
+        // Progress bar animation
+        const form = document.getElementById('carForm');
+        const inputs = form.querySelectorAll('input, select, textarea');
         const progressFill = document.getElementById('progressFill');
+        const aiSection = document.getElementById('aiSection');
+        const yearPrediction = document.getElementById('yearPrediction');
 
         function updateProgress() {
             let filled = 0;
@@ -384,19 +567,76 @@
             input.addEventListener('change', updateProgress);
         });
 
-        // Form validation with animation
+        // AI-powered features
+        const nameInput = document.getElementById('name');
+        const engineInput = document.getElementById('engine_capacity');
+        const featuresInput = document.getElementById('features');
+
+        let aiTimeout;
+        async function triggerAI() {
+            const carName = nameInput.value;
+            const engineCapacity = engineInput.value;
+            const features = featuresInput.value;
+
+            if (carName.length > 3) {
+                // Show AI section
+                aiSection.style.display = 'block';
+                
+                // Load car images
+                loadCarImages(carName);
+                
+                // Predict year if we have enough info
+                if (engineCapacity || features) {
+                    const prediction = await predictCarYear(carName, engineCapacity, features);
+                    document.getElementById('predictedYear').textContent = prediction.year;
+                    document.getElementById('confidence').textContent = prediction.confidence + '%';
+                    yearPrediction.style.display = 'block';
+                }
+            }
+        }
+
+        nameInput.addEventListener('input', () => {
+            clearTimeout(aiTimeout);
+            aiTimeout = setTimeout(triggerAI, 500);
+        });
+
+        engineInput.addEventListener('input', () => {
+            clearTimeout(aiTimeout);
+            aiTimeout = setTimeout(triggerAI, 500);
+        });
+
+        featuresInput.addEventListener('input', () => {
+            clearTimeout(aiTimeout);
+            aiTimeout = setTimeout(triggerAI, 500);
+        });
+
+        // Form validation
         form.addEventListener('submit', function(e) {
+            e.preventDefault();
             const button = form.querySelector('button');
+            button.textContent = 'Submitting...';
             button.style.transform = 'scale(0.95)';
+            
             setTimeout(() => {
                 button.style.transform = 'scale(1)';
-            }, 150);
+                button.textContent = 'Submitted! ✓';
+                button.style.background = 'linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%)';
+                
+                setTimeout(() => {
+                    alert('Car listing submitted successfully!');
+                    form.reset();
+                    updateProgress();
+                    aiSection.style.display = 'none';
+                    button.textContent = 'Submit Listing';
+                    button.style.background = 'linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%)';
+                }, 1500);
+            }, 1500);
         });
 
         // Add floating animation to inputs on focus
         inputs.forEach(input => {
             input.addEventListener('focus', function() {
-                this.parentElement.querySelector('label').style.color = '#667eea';
+                this.parentElement.querySelector('label').style.color = '#FF6B6B';
             });
             
             input.addEventListener('blur', function() {
