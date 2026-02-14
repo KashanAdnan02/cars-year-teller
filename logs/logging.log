@@ -1,0 +1,309 @@
+[2026-02-12 22:30:58,236: INFO: data_ingestion: ingestion done!]
+[2026-02-12 22:30:58,316: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,317: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,317: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,317: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,318: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,318: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,318: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,318: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,318: INFO: data_validation: data validation done!]
+[2026-02-12 22:30:58,388: WARNING: data_transformation: 18 rows have missing or unknown gender value → filled with 0]
+[2026-02-12 22:30:58,681: INFO: data_transformation: Data transformation completed successfully]
+[2026-02-12 22:30:58,865: INFO: model_evaluation: Loading test data from: artifacts/data_transformation/test.csv]
+[2026-02-12 22:30:58,876: INFO: model_evaluation: Test data shape: (20000, 9)]
+[2026-02-12 22:30:58,877: INFO: model_evaluation: Loading model from: artifacts/model_trainer/model.joblib]
+[2026-02-12 22:30:58,878: INFO: model_evaluation: Predicting on 20000 test samples]
+[2026-02-12 22:30:58,878: INFO: model_evaluation: Feature columns: ['gender', 'age', 'hypertension', 'heart_disease', 'smoking_history', 'bmi', 'HbA1c_level', 'blood_glucose_level']]
+[2026-02-12 22:30:58,881: INFO: model_evaluation: Evaluation metrics - RMSE: 0.2289, MAE: 0.1516, R²: 0.3265]
+[2026-02-12 22:30:58,882: INFO: model_evaluation: Metrics saved to: artifacts/model_evaluation/metrics.json]
+[2026-02-12 22:31:20,337: INFO: model_evaluation: Model and metrics successfully logged to MLflow]
+[2026-02-13 01:58:24,139: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-13 01:58:24,140: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-13 02:00:09,150: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:00:09] "GET / HTTP/1.1" 200 -]
+[2026-02-13 02:00:09,414: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:00:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-02-13 02:06:59,008: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:06:59] "GET / HTTP/1.1" 200 -]
+[2026-02-13 02:07:03,613: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-13 02:07:03,613: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-13 02:07:05,011: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:07:05] "GET / HTTP/1.1" 200 -]
+[2026-02-13 02:07:06,321: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:07:06] "GET / HTTP/1.1" 200 -]
+[2026-02-13 02:07:10,917: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:07:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-13 02:08:23,825: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:08:23] "GET /predict?gender=1&age=29&hypertension=2&heart_disease=2&smoking_history=0&bmi=24&HbA1c_level=6&blood_glucose_level=2 HTTP/1.1" 200 -]
+[2026-02-13 02:09:02,368: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:09:02] "GET /predict?gender=1&age=29&hypertension=2&heart_disease=2&smoking_history=0&bmi=24&HbA1c_level=6&blood_glucose_level=2 HTTP/1.1" 200 -]
+[2026-02-13 02:09:09,462: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-13 02:09:09,462: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-13 02:09:11,978: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:09:11] "GET /predict?gender=1&age=29&hypertension=2&heart_disease=2&smoking_history=0&bmi=24&HbA1c_level=6&blood_glucose_level=2 HTTP/1.1" 200 -]
+[2026-02-13 02:09:12,675: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:09:12] "GET /predict?gender=1&age=29&hypertension=2&heart_disease=2&smoking_history=0&bmi=24&HbA1c_level=6&blood_glucose_level=2 HTTP/1.1" 200 -]
+[2026-02-13 02:09:32,950: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:09:32] "POST /predict HTTP/1.1" 200 -]
+[2026-02-13 02:09:35,051: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:09:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-13 02:13:28,225: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-13 02:13:28,225: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-13 02:13:57,619: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:13:57] "GET /predict?gender=1&age=29&hypertension=2&heart_disease=2&smoking_history=0&bmi=24&HbA1c_level=6&blood_glucose_level=2 HTTP/1.1" 200 -]
+[2026-02-13 02:13:58,919: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:13:58] "GET /predict?gender=1&age=29&hypertension=2&heart_disease=2&smoking_history=0&bmi=24&HbA1c_level=6&blood_glucose_level=2 HTTP/1.1" 200 -]
+[2026-02-13 02:14:15,208: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'index' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-13 02:14:15,211: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 02:14:15] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-02-13 23:34:47,581: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-13 23:34:47,626: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-13 23:34:53,393: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:34:53] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:34:54,164: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:34:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-02-13 23:35:24,711: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:35:24] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:35:24,866: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:35:24] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:35:25,029: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:35:25] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:35:27,124: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:35:27] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-13 23:35:52,048: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'index' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-13 23:35:52,050: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:35:52] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-02-13 23:37:28,062: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'index' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-13 23:37:28,063: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:28] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-02-13 23:37:35,353: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:35] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:37:35,518: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:35] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:37:35,647: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:35] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:37:35,811: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:35] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:37:36,089: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:36] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:37:36,267: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:36] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:37:50,958: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kashanadnan/Code/datascience/.venv/lib/python3.12/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'index' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-13 23:37:50,959: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:37:50] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-02-13 23:39:42,718: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-13 23:39:42,718: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-13 23:39:46,734: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:39:46] "GET / HTTP/1.1" 200 -]
+[2026-02-13 23:41:21,233: INFO: _internal: 127.0.0.1 - - [13/Feb/2026 23:41:21] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 00:07:00,274: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-14 00:07:00,275: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 00:07:03,915: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:07:03] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:07:19,744: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:07:19] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 00:22:03,461: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-14 00:22:03,462: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 00:22:08,084: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:22:08] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:22:08,251: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:22:08] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:22:08,446: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:22:08] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:22:08,618: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:22:08] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:22:29,778: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:22:29] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 00:22:47,492: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:22:47] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 00:23:36,955: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:23:36] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 00:25:13,687: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-14 00:25:13,687: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 00:25:18,894: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:25:18] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 00:44:02,624: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-14 00:44:02,624: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 00:44:20,148: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:44:20] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:47:58,148: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:47:58] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:48:01,801: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2026-02-14 00:48:01,802: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 00:48:04,102: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:48:04] "GET / HTTP/1.1" 200 -]
+[2026-02-14 00:48:25,710: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 00:48:25] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:42:12,968: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 14:42:12,980: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 14:42:34,608: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:42:34] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:42:34,973: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:42:34] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:42:36,835: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:42:36] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:43:57,862: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:43:57] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 14:47:19,889: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:47:19] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:52:57,153: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:52:57] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:52:57,293: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:52:57] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:52:57,377: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:52:57] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:53:05,362: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 14:53:05,363: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 14:53:09,940: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:53:09] "GET / HTTP/1.1" 200 -]
+[2026-02-14 14:57:42,028: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 14:57:42] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:01:52,890: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:01:52] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:02:09,109: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:02:09,110: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:02:11,663: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:02:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:02:13,979: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:02:13] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:02:14,068: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:02:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:04:25,582: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:04:25] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:04:25,670: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:04:25] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:04:31,843: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:04:31,844: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:04:35,313: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:04:35] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:04:35,353: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:04:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:04:52,871: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:04:52,871: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:04:56,266: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:04:56] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:04:56,304: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:04:56] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:08:08,520: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:08:08,521: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:08:11,932: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:08:11] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:08:11,997: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:08:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:08:44,018: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:08:44] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:08:44,137: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:08:44] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:08:52,332: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:08:52,332: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:09:35,066: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:09:35] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:09:35,133: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:09:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:09:35,449: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:09:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-02-14 15:12:02,293: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:12:02,293: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:12:05,326: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:12:05] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:12:05,405: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:12:05] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:12:26,297: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:12:26,298: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:13:49,547: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:13:49] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:13:49,636: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:13:49] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:14:06,556: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:14:06,556: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:14:10,215: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:10] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:14:10,279: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:14:19,838: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:19] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:14:19,931: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:14:22,747: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:14:22,747: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:14:26,204: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:26] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:14:26,250: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:14:36,449: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:14:36,450: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:14:39,486: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:39] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:14:39,528: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:39] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:14:47,770: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:14:47,770: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:14:51,565: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:51] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:14:51,630: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:14:51] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:18:53,165: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:18:53] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:18:53,286: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:18:53] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:18:56,734: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:18:56,734: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:19:00,014: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:19:00] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:19:00,077: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:19:00] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:19:00,366: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:19:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-02-14 15:19:02,703: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:19:02] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:19:02,768: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:19:02] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:21:05,732: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:21:05,733: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:21:08,522: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:21:08] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:21:08,580: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:21:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-14 15:22:48,850: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.20.125:8080]
+[2026-02-14 15:22:48,850: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-02-14 15:22:53,488: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:22:53] "POST /predict HTTP/1.1" 200 -]
+[2026-02-14 15:24:07,893: INFO: _internal: 127.0.0.1 - - [14/Feb/2026 15:24:07] "GET / HTTP/1.1" 200 -]
