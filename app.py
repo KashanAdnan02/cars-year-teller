@@ -11,33 +11,42 @@ app = Flask(__name__)
 def homePage():
     return render_template("index.html")
 
-@app.route('/predict',methods=['POST','GET'])
+@app.route('/predict', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
         try:
-            gender =int(request.form['gender'])
-            age =float(request.form['age'])
-            hypertension =float(request.form['hypertension'])
-            heart_disease =float(request.form['heart_disease'])
-            smoking_history =int(request.form['smoking_history'])
-            bmi =float(request.form['bmi'])
-            HbA1c_level =float(request.form['HbA1c_level'])
-            blood_glucose_level =float(request.form['blood_glucose_level'])
-         
-            data = [gender,age,hypertension,heart_disease,smoking_history,bmi,HbA1c_level,blood_glucose_level]
-            data = np.array(data).reshape(1, 8)
-            
+            # Collect form data from user
+            input_data = {
+                'nam': request.form['nam'],
+                'Price': request.form['Price'],
+                'Year': int(request.form['Year']),
+                'Millage': request.form['Millage'],
+                'Fuel': request.form['Fuel'],
+                'Transmission': request.form['Transmission'],
+                'Province': request.form['Province'],
+                'Color': request.form['Color'],
+                'Assembly': request.form['Assembly'],
+                'Body Type': request.form['Body_Type'],
+                'Ad Reference': request.form.get('Ad_Reference', ''),
+                'Features': request.form.get('Features', ''),
+                'Owner nam': request.form.get('Owner_nam', '')
+            }
+
+            # Convert to DataFrame
+            input_df = pd.DataFrame([input_data])
+
+            # Prediction
             obj = PredictionPipeline()
-            predict = obj.predict(data)
-            return render_template('results.html', prediction = str(predict))
+            prediction = obj.predict(input_df)
+
+            return render_template('results.html', prediction=str(prediction[0]))
 
         except Exception as e:
-            print('The Exception message is: ',e)
-            return 'something is wrong'
+            print('The Exception message is: ', e)
+            return 'Something went wrong. Please check your input.'
 
     else:
         return render_template('index.html')
-
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port = 8080)
